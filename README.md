@@ -1,53 +1,36 @@
-# Google Careers Page Scraper
+# Internshala Job Scraper
 
-A Python script that scrapes job listings from the Google Careers website, collecting job titles, locations, required experience, and skills, and exports them to a clean, well-structured Excel file.
+This Python script automates the process of scraping job listings from Internshala.com, extracting key details, and saving the data into a structured Excel file. It is a simple and efficient tool for collecting job-related information.
 
 ## Features
 
-- **Automated Scraping**: Fetches job data from Google Careers, even from dynamic pages.
-- **Data Export**: Outputs a user-friendly Excel file (`.xlsx`) with all scraped data.
-- **Pagination Handling**: Automatically navigates through multiple pages of job listings.
-- **Configurable**: Set the maximum number of jobs to scrape or scrape all available jobs.
-- **Easy to Use**: Simple variables and clear instructions for customization.
+- **Data Scraping**: Extracts job titles, locations, experience levels, skills, salaries, and job descriptions from the Internshala jobs page.
+- **Detailed Insights**: Retrieves additional details by following links to individual job pages.
+- **Excel Export**: Saves all scraped data into a well-organized `Jobs.xlsx` file.
+- **Readable Output**: Automatically adjusts column widths in the Excel file for better readability.
 
 ## Prerequisites
 
-- Python 3.x
-- The following Python libraries:
-  - `requests`
-  - `beautifulsoup4`
-  - `pandas`
-  - `openpyxl`
+- Python 3.6 or higher.
+- Required Python libraries installed.
 
-Install dependencies with:
+## Installation
 
-```bash
-pip install -r requirements.txt
-```
-
-## How to Use
-
-1. **Open the Script**: Open the `google_job_scraper.py` file in a text editor.
-
-2. **Set Job Limit**: You can change the `max_jobs_to_scrape` variable in the `if __name__ == "__main__":` block to a specific number, or leave it as `None` to scrape all available jobs.
-
-    ```python
-    if __name__ == "__main__":
-        # Scrape a maximum of 50 jobs
-        scrape_google_jobs(max_jobs_to_scrape=50)
-
-        # Or, uncomment the line below to scrape all jobs
-        # scrape_google_jobs()
-    ```
-
-3. **Run the Script**: Execute the script from your terminal:
+1. Clone the repository or save the Python script and `requirements.txt` in the same directory.
+2. Install the required libraries using pip:
 
     ```bash
-    python google_job_scraper.py
+    pip install -r requirements.txt
     ```
 
-4. **View Results**: An Excel file named `Google_Jobs.xlsx` will be created in the same directory, containing the scraped job data.
+## Usage
 
-## License
+Run the scraper by executing the Python script in your terminal:
 
-This project is licensed for Educational Use Only. You may use, modify, and share this code for learning and non-commercial purposes. Any commercial use, redistribution, or publication of this code is strictly prohibited without explicit permission.
+```bash
+python scraper.py
+```
+
+The script will scrape job data and generate a file named `Jobs.xlsx` in the same directory.
+
+> **Note**: The script includes a small delay (`time.sleep(0.5)`) between requests to ensure responsible scraping practices and avoid overwhelming the server.
